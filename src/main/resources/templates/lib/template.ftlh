@@ -21,7 +21,7 @@
     <title>Kafdrop: ${title}</title>
     <link type="text/css" rel="stylesheet" href="<@spring.url '/css/bootstrap.min.css'/>"/>
     <link type="text/css" rel="stylesheet" href="<@spring.url '/css/font-awesome.min.css'/>"/>
-    <link type="text/css" rel="stylesheet" href="<@spring.url '/css/global.css'/>"/>
+    <link type="text/css" rel="stylesheet" href="<@spring.url '/css/global.min.css'/>"/>
     <link type="text/css" rel="stylesheet" href="<@spring.url '/css/light-mode.min.css'/>"/>
 
     <script src="<@spring.url '/js/jquery-3.5.1.slim.min.js'/>"></script>

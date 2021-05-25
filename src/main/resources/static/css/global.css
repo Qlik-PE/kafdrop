@@ -40,11 +40,11 @@ input[type=text].error {
 }
 
 #header-title-line {
-    height: 7em;
+    height: 4em;
 }
 
 #logo {
-    height: 7em;
+    height: 3em;
     padding-bottom: 0.5em;
 }
 
