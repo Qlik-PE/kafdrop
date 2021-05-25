@@ -22,10 +22,15 @@
                 <div id="logo" class="col-md-1">
                     <img alt="logo" height="100%" src="<@spring.url '/images/kafdrop-logo.svg'/>"/>
                 </div>
-                <div id="title" class="col-md-10">
+                <div id="title" class="col-md-9">
                     <h1 class="app-name brand mb-0">
                         <a href="<@spring.url '/'/>">Kafdrop</a>
                     </h1>
+                </div>
+                <div class="form-check form-switch col-md-1">
+                    <input type="checkbox" class="form-check-input text-right" id="lightSwitch"/>
+                    <label class="form-check-label" for="lightSwitch"><i class="fa fa-lightbulb-o"></i></label>
+                    <script src="/js/light-mode-switch.min.js"></script>
                 </div>
                 <div id="github-star" class="col-md-1">
                     <a class="github-button" href="https://github.com/obsidiandynamics/kafdrop" data-show-count="false"
