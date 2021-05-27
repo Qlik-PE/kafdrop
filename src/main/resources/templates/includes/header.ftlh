@@ -49,7 +49,7 @@
                     <input type="checkbox" class="form-check-input text-right" id="lightSwitch"/>
                     <label class="form-check-label" for="lightSwitch"><i class="fa fa-lightbulb-o"></i></label>
                 </div>
-                <script src="/js/light-mode-switch.min.js"></script>
+                <script src="<@spring.url '/js/light-mode-switch.min.js'/>"></script>
             </div>
             <div id="homeLink">
                 <h4>
