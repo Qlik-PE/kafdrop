@@ -18,11 +18,15 @@
 <script>
     function hideHome() {
         const currentPathname = window.location.pathname;
-        const x = document.getElementById("homeLink");
-        const y = document.getElementById("hideHome");
+        const x  = document.getElementById("homeLink");
+        const y  = document.getElementById("hideHome");
 
-        // only display if we are not on the home page.
-        if (currentPathname !== "/" && currentPathname !== "/login") {
+        /*
+         * Only display if we are not on the home page.
+         * Need to account for context path.
+         */
+
+        if (!currentPathname.endsWith('/')  && !currentPathname.endsWith('/login')) {
             x.style.display = "block";
             y.style.display = "none";
         } else {
