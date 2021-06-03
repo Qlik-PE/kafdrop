@@ -149,7 +149,8 @@
             </#if>
         </div>
         &nbsp;&nbsp;
-        <button id="viewMessagesBtn" class="btn btn-success" type="submit" ><i class="fa fa-search"></i> View Messages</button>
+        <button style="margin-top: 1em;" id="viewMessagesBtn" class="btn btn-success" type="submit" >
+            <i class="fa fa-search"></i> View Messages</button>
     </form>
 </div>
 
