@@ -7,6 +7,7 @@ target
 *.iml
 *.iws
 *.ipr
+*.swp
 .idea/
 .DS_Store
 .factorypath
