@@ -21,6 +21,12 @@ spring:
       fail_on_unknown_properties: false
       read_unknown_enum_values_as_null: true
 
+springdoc:
+   packagesToScan: kafdrop.controller
+   pathsToMatch: /, /consuer,  /acl, /topic, /create, /broker, /topic/**, /broker/**
+
+
+
 management:
   endpoints:
     web:

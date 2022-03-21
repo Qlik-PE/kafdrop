@@ -18,9 +18,6 @@
 
 package kafdrop.controller;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import kafdrop.model.AclVO;
 import kafdrop.service.KafkaMonitor;
 import org.springframework.http.MediaType;
@@ -48,10 +45,6 @@ public final class AclController {
     return "acl-overview";
   }
 
-  @ApiOperation(value = "getAllAcls", notes = "Get list of all acls")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = String.class, responseContainer = "List")
-  })
   @RequestMapping(path = "/acl", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
   public @ResponseBody List<AclVO> getAllTopics() {
     return kafkaMonitor.getAcls();

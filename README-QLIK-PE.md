@@ -70,4 +70,20 @@ set the *forward-headers-strategy* to *NATIVE*.
 after the addition of the light switch, making submission somewhat
 difficult.
 
+### Upgraded to Spring Boot 2.6.4
+As a result of the "log4shell" exploit that was revealed at the end of 2021,
+upgraded Spring Boot from 2.4.4 that was originally used by Kafdrop, and further
+upgraded log4j2 to 2.17.1.
 
+A challenge that was created by this upgrade is that the *springfox-swagger2* 
+dependency no longer worked and prevented compilation. There did not seem to
+be a newer version of this artifact that supported Spring Boot 2.6.4. As best
+as I could tell, the only real way forward was to convert to the
+*springdoc-openapi-ui* package. 
+
+See [Migrating from SpringFox](https://springdoc.org/migrating-from-springfox.html).
+
+I began this process, but as I dug deeper things
+got more and more complicated and I came to the conclusion that since this
+original REST capability was not needed by our use case, I opted to delete it 
+instead.

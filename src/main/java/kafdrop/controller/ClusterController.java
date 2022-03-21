@@ -18,7 +18,6 @@
 
 package kafdrop.controller;
 
-import io.swagger.annotations.*;
 import kafdrop.config.*;
 import kafdrop.model.*;
 import kafdrop.service.*;
@@ -89,10 +88,6 @@ public final class ClusterController {
     return "cluster-overview";
   }
 
-  @ApiOperation(value = "getCluster", notes = "Get high level broker, topic, and partition data for the Kafka cluster")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = ClusterInfoVO.class)
-  })
   @RequestMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
   public @ResponseBody ClusterInfoVO getCluster() {
     final var vo = new ClusterInfoVO();

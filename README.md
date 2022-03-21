@@ -179,6 +179,10 @@ Starting with version 2.0.0, Kafdrop offers a set of Kafka APIs that mirror the 
 * `/topic`: Returns a list of all topics.
 
 ## Swagger
+
+**NOTE: Swagger has been removed for Spring Boot compatitibility reasons.** See *README-QLIK-PE.md* for 
+more information.
+
 To help document the Kafka APIs, Swagger has been included. The Swagger output is available by default at the following Kafdrop URL:
 ```
 /v2/api-docs

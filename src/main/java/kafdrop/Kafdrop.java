@@ -74,7 +74,8 @@ public class Kafdrop {
     return new WebMvcConfigurer() {
       @Override
       public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-        configurer.favorPathExtension(false);
+        // deprecated and no longer needed.
+        //configurer.favorPathExtension(false);
       }
     };
   }

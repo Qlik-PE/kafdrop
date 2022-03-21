@@ -18,7 +18,6 @@
 
 package kafdrop.controller;
 
-import io.swagger.annotations.*;
 import kafdrop.model.*;
 import kafdrop.service.*;
 import org.springframework.http.*;
@@ -44,20 +43,11 @@ public final class BrokerController {
     return "broker-detail";
   }
 
-  @ApiOperation(value = "getBroker", notes = "Get details for a specific Kafka broker")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = BrokerVO.class),
-      @ApiResponse(code = 404, message = "Invalid Broker ID")
-  })
   @RequestMapping(path = "/broker/{id}", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
   public @ResponseBody BrokerVO brokerDetailsJson(@PathVariable("id") int brokerId) {
     return kafkaMonitor.getBroker(brokerId).orElseThrow(() -> new BrokerNotFoundException("No such broker " + brokerId));
   }
 
-  @ApiOperation(value = "getAllBrokers", notes = "Get details for all known Kafka brokers")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = BrokerVO.class)
-  })
   @RequestMapping(path = "/broker", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
   public @ResponseBody List<BrokerVO> brokerDetailsJson() {
     return kafkaMonitor.getBrokers();

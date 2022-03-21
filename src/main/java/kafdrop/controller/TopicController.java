@@ -18,7 +18,6 @@
 
 package kafdrop.controller;
 
-import io.swagger.annotations.*;
 import kafdrop.model.*;
 import kafdrop.service.*;
 import org.slf4j.Logger;
@@ -88,31 +87,17 @@ public final class TopicController {
     return "topic-create";
   }
 
-  @ApiOperation(value = "getTopic", notes = "Get details for a topic")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = TopicVO.class),
-      @ApiResponse(code = 404, message = "Invalid topic name")
-  })
   @RequestMapping(path = "/{name:.+}", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
   public @ResponseBody TopicVO getTopic(@PathVariable("name") String topicName) {
     return kafkaMonitor.getTopic(topicName)
         .orElseThrow(() -> new TopicNotFoundException(topicName));
   }
 
-  @ApiOperation(value = "getAllTopics", notes = "Get list of all topics")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = String.class, responseContainer = "List")
-  })
   @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
   public @ResponseBody List<TopicVO> getAllTopics() {
     return kafkaMonitor.getTopics();
   }
 
-  @ApiOperation(value = "getConsumers", notes = "Get consumers for a topic")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = String.class, responseContainer = "List"),
-      @ApiResponse(code = 404, message = "Invalid topic name")
-  })
   @RequestMapping(path = "/{name:.+}/consumers", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
   public @ResponseBody List<ConsumerVO> getConsumers(@PathVariable("name") String topicName) {
     final var topic = kafkaMonitor.getTopic(topicName)
@@ -124,10 +109,6 @@ public final class TopicController {
    * API for topic creation
    * @param createTopicVO request
    */
-  @ApiOperation(value = "createTopic", notes = "Create topic")
-  @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Success", response = String.class)
-  })
   @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
   public String createTopic(CreateTopicVO createTopicVO, Model model) {
     model.addAttribute("topicCreateEnabled", topicCreateEnabled);
