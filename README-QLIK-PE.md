@@ -13,6 +13,10 @@ as it is unlikely that they all would have been accepted.
 
 ## Modifications to the Original Kafdrop
 
+### Java Version
+
+This build requires Java 17 or later (vs. the original Java 11 or later).
+
 ### Added a login screen with associated credentials. 
 * The default credentials are username: admin, password: admin. These
 are configured in the application.yml file.
@@ -70,7 +74,7 @@ set the *forward-headers-strategy* to *NATIVE*.
 after the addition of the light switch, making submission somewhat
 difficult.
 
-### Upgraded to Spring Boot 2.6.4
+### Upgraded to Spring Boot 2.6.15
 As a result of the "log4shell" exploit that was revealed at the end of 2021,
 upgraded Spring Boot from 2.4.4 that was originally used by Kafdrop, and further
 upgraded log4j2 to 2.17.1.

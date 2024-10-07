@@ -1,6 +1,9 @@
-FROM openjdk:12.0.1-jdk-oraclelinux7
+FROM rockylinux:9
 
 ARG installfile=file_not_set
+
+RUN dnf install -y java-17-openjdk java-17-openjdk-devel
+
 
 ADD kafdrop.sh /
 # automatically unpacks

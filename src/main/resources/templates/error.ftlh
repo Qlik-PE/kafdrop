@@ -3,7 +3,7 @@
 <@template.header "${error.error}"/>
 <h2>${error.error}</h2>
 <div id="errorHeader">
-A ${error.status} error has occurred: <span id="errorMessage">${error.message}</span>
+A ${error.status} error has occurred: <span id="errorMessage">${error.message!"no error message present"}</span>
 </div>
 <#if error.trace??>
     <div id="stackTraceTitle">Stack trace</div>

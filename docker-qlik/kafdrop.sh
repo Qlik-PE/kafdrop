@@ -53,7 +53,7 @@ fi
 
 username=${USERNAME:-admin}
 password=${PASSWORD:-admin}
-role=${PASSWORD:-USER}
+role=${ROLE:-USER}
 
 ARGS="--add-opens=java.base/sun.nio.ch=ALL-UNNAMED -Xss256K \
      $JMX_ARGS \
