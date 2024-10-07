@@ -42,7 +42,7 @@
             <div id="header-title-line" class="row">
                 <div id="logo" class="col-md-1">
                     <!--img alt="logo" height="100%" src="<@spring.url '/images/kafdrop-logo.svg'/>"/-->
-                    <img alt="logo" height="100%" src="<@spring.url '/images/Qlik-Logo_RGB.svg'/>"/>
+                    <img alt="logo" height="125%" src="<@spring.url '/images/qlik-logo-rgb.png'/>"/>
                 </div>
                 <div class="col-md-10 text-center">
                     <h1 class="app-name brand mb-0">
